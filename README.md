@@ -1,4 +1,4 @@
-# docker-helloworld-tcp-server
+# docker-helloworld-http-server
 Simple HTTP server docker image implemented in python
 
 ## Running
