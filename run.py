@@ -11,7 +11,10 @@ def start_tcp_server():
         response = {}
         response["headers"] = dict(request.headers)
         response["request"] = dict(request.data)
-        return json.dumps(response, sort_keys=True, indent=4)
+        status_code = request.args.get('status_code')
+        if not status_code.isnumeric():
+            status_code = 200
+        return json.dumps(response, sort_keys=True, indent=4), status_code
 
 if __name__ == "__main__":
     start_tcp_server()
